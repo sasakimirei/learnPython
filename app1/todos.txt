@@ -1,0 +1,5 @@
+clean
+throw
+prepare
+play
+fix
