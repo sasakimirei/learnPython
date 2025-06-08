@@ -1,4 +1,5 @@
 while True:
+    # Get user input and strip space chars from it
     user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
 
@@ -20,7 +21,18 @@ while True:
             todos = file.readlines()
             # print(todos)
             file.close()
+
+            # new_todos = []
+            #
+            # for item in todos:
+            #     new_item = item.strip('\n')
+            #     new_todos.append(new_item)
+            # print(new_todos)
+
+            # new_todos = [item.strip('\n') for item in todos]
+
             for index, item in enumerate(todos):
+                item = item.strip('\n')
                 row = f"{index + 1} - {item}"
                 print(row)
         case 'edit':
