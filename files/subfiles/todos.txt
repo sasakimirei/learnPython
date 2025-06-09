@@ -1,5 +1,3 @@
 clean
-throw
-prepare
-play
+play the game
 fix
