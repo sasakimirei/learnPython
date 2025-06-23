@@ -1,19 +1,5 @@
-def get_todos(filepath="todos.txt"):
-    """
-    Read a text file and return the list of
-    to-do items.
-    """
-    with open(filepath, 'r') as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
-
-
-def write_todos(todos_arg, filepath="todos.txt"):
-    """ Write the to-do items list in the text file. """
-    with open(filepath, 'w') as file_local:
-        file_local.writelines(todos_arg)
-
-
+# from functions import get_todos, write_todos
+from modules import functions
 
 while True:
     # Get user input and strip space chars from it
@@ -26,19 +12,19 @@ while True:
         # todos = file.readlines()
         # file.close()
 
-        todos = get_todos()
+        todos = functions.get_todos()
 
         todos.append(todo + '\n')
         # file = open("files/subfiles/todos.txt", "w")
         # file.writelines(todos)
         # file.close()
 
-        write_todos(todos)
+        functions.write_todos(todos)
 
 
     elif user_action.startswith('show'):
 
-        todos = get_todos()
+        todos = functions.get_todos()
         # new_todos = []
         #
         # for item in todos:
@@ -56,12 +42,12 @@ while True:
             print(number)
             number = number - 1
 
-            todos = get_todos()
+            todos = functions.get_todos()
 
             new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
-            write_todos(todos)
+            functions.write_todos(todos)
         except ValueError:
             print("Your command is not valid.")
             continue
@@ -70,12 +56,12 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = get_todos()
+            todos = functions.get_todos()
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
 
-            write_todos(todos)
+            functions.write_todos(todos)
 
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
