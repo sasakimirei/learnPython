@@ -1,5 +1,10 @@
 # from functions import get_todos, write_todos
 from modules import functions
+import time
+
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is", now)
 
 while True:
     # Get user input and strip space chars from it
