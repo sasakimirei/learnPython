@@ -13,19 +13,12 @@ while True:
 
     if user_action.startswith('add'):
         todo = user_action[4:]
-        # file = open("files/subfiles/todos.txt", 'r')
-        # todos = file.readlines()
-        # file.close()
 
         todos = functions.get_todos()
 
         todos.append(todo + '\n')
-        # file = open("files/subfiles/todos.txt", "w")
-        # file.writelines(todos)
-        # file.close()
 
         functions.write_todos(todos)
-
 
     elif user_action.startswith('show'):
 
